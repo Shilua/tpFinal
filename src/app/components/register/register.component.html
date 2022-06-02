@@ -34,7 +34,7 @@
             <label for="Especialidad">Especialidad</label>
             <input type="text" class="form-control" id="Especialidad" [(ngModel)]="this.especiality"/>
             <p>{{this.user.speciality}}</p>
-            <button class="btn btn-block btn-outline-danger" (click)="saveEspeciality()">cargar</button>
+            <button class="btn btn-block btn-outline-primary" (click)="saveEspeciality()">cargar</button>
           </div>
         </div>
         <div *ngIf="this.user.profile == 'Paciente'">
@@ -53,8 +53,8 @@
         </div>
         
         
-        <button class="btn btn-block btn-danger" (click)="onRegister()">Registrarse</button>
-        <button class="btn btn-block btn-outline-danger" (click)="login()">Conectarse</button>
+        <button class="btn btn-block btn-primary" (click)="onRegister()">Registrarse</button>
+        <button class="btn btn-block btn-outline-primary" (click)="login()">Conectarse</button>
       </div>
     </div>
   </div>
