@@ -17,6 +17,7 @@ import { UsersComponent } from './components/users/users.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { CaptchaComponent } from './components/captcha/captcha.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
     UsersComponent,
     UserTableComponent,
     NavbarComponent,
-    InicioComponent
+    InicioComponent,
+    CaptchaComponent
   ],
   imports: [
     BrowserModule,

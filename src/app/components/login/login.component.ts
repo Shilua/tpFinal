@@ -30,6 +30,11 @@ export class LoginComponent implements OnInit {
     )
   }
 
+  loginWithUser(email:string,password:string){
+    this.user.email = email;
+    this.user.password = password;
+  }
+
   register(){
     this.router.navigate(['/register']);
   }
