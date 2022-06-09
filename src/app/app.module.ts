@@ -16,6 +16,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AdminComponent,
     UsersComponent,
     UserTableComponent,
-    NavbarComponent
+    NavbarComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
