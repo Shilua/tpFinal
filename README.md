@@ -7,4 +7,4 @@ como especialista podra ver los turnos que tiene asignado
 
 en el registro se podra dar de alta, elija entre especialista y paciente, complete los datos y recibira un correo electronico para confirmar su identidad
 
-![registro].(readme-assets/registro.png)
+![registro](readme-assets/registro.png)
