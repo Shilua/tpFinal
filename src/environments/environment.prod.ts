@@ -7,6 +7,7 @@ export const environment = {
     storageBucket: "clinica-4f817.appspot.com",
     messagingSenderId: "624010678110",
     appId: "1:624010678110:web:29995bbe1022490eef09cf",
-    measurementId: "G-2EG7R6914E"
+    measurementId: "G-2EG7R6914E",
+    siteKey: '6Lck5FogAAAAAIDvUNHE43s7PuyfGGfmoiuRaWdE'
   }
 };

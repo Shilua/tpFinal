@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from "../../services/auth.service";
 import { UserService } from "../../services/user.service";
 import { User } from '../../classes/user';
+import { NgForm } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
@@ -19,6 +20,7 @@ export class RegisterComponent implements OnInit {
   especiality:string='';
   imageOne:any;
   imageTwo:any;
+  token: string|undefined;
 
 
   constructor(
@@ -26,7 +28,7 @@ export class RegisterComponent implements OnInit {
     private userSvc:UserService,
     private router: Router
     ) {
-
+      this.token = undefined
    }
     
   ngOnInit() {
@@ -76,6 +78,17 @@ export class RegisterComponent implements OnInit {
   }
   paciente(){
     this.user.profile = 'Paciente'
+  }
+
+  public send(form: NgForm): void {
+    if (form.invalid) {
+      for (const control of Object.keys(form.controls)) {
+        form.controls[control].markAsTouched();
+      }
+      return;
+    }
+
+    console.debug(`Token [${this.token}] generated`);
   }
 
 }

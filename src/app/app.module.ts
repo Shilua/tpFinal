@@ -18,6 +18,8 @@ import { UserTableComponent } from './components/user-table/user-table.component
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CaptchaComponent } from './components/captcha/captcha.component';
+import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+
 
 @NgModule({
   declarations: [
@@ -41,9 +43,16 @@ import { CaptchaComponent } from './components/captcha/captcha.component';
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    HttpClientModule
+    HttpClientModule,
+    RecaptchaModule,
+    RecaptchaFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: RECAPTCHA_SETTINGS,
+    useValue: {
+      siteKey: environment.recaptcha.siteKey,
+    } as RecaptchaSettings,
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
