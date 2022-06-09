@@ -1,4 +1,10 @@
 <div class="row justify-content-center" style="padding-top: 150px;">
+  <div class="col-4">
+    <img class="mb-4 rounded-circle" src="../../../assets/fever-g399928f28_640.png" alt="" width="250" height="250" (click)="paciente()">
+  </div>
+  <div class="col-4"><img class="mb-4 rounded-circle" src="../../../assets/doctor-ge7cc28a68_640.png" alt="" width="250" height="250" (click)="especialista()"></div>
+</div>
+<div class="row justify-content-center" style="padding-top: 150px;">
     <div class="col-8 align-self-center">
       <div>
         <div class="form-group">
@@ -14,6 +20,10 @@
             <input [(ngModel)]="user.dni"  type="Number" class="form-control" id="DNI"/>
         </div>
         <div class="form-group">
+          <label for="Edad">Edad</label>
+          <input [(ngModel)]="user.age"  type="Number" class="form-control" id="Edad"/>
+      </div>
+        <div class="form-group">
           <label for="email">Email</label>
           <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control" id="email"/>
         </div>
@@ -21,13 +31,13 @@
           <label for="pass">Password</label>
           <input [(ngModel)]="user.password" placeholder="ingrese clave" type="password" class="form-control" id="pass"/>
         </div>
-        <div class="form-group">
+        <!--div class="form-group">
           <label for="Perfil">Perfil</label>
           <select class="form-control" [(ngModel)]="this.user.profile" id="perfil" >
             <option>Paciente</option>
             <option>Especialista</option>
           </select>
-        </div>
+        </div-->
         
         <div *ngIf="this.user.profile == 'Especialista'">
           <div class="form-group">
@@ -36,20 +46,24 @@
             <p>{{this.user.speciality}}</p>
             <button class="btn btn-block btn-outline-primary" (click)="saveEspeciality()">cargar</button>
           </div>
+          <div class="form-group" >
+            <label for="imgOne">Foto de perfil</label>
+            <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
+          </div>
         </div>
         <div *ngIf="this.user.profile == 'Paciente'">
         <div class="form-group">
             <label for="obraSocial">Obra Social</label>
             <input [(ngModel)]="user.obraSocial" placeholder="ingrese Obra Social" type="Text" class="form-control" id="obraSocial"/>
         </div>
-          <!--div class="form-group" >
+          <div class="form-group" >
             <label for="imgOne">Foto de perfil</label>
-            <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event.target.files)" id="imgOne"/>
+            <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
           </div>
           <div class="form-group">
             <label for="imgTwo">Foto de perfil dos</label>
-          <input type="file" class="form-control" [(ngModel)]="imgTwoUrl" (change)="handleSecondImg($event.target.files)" id="imgTwo"/>
-          </div-->
+          <input type="file" class="form-control" [(ngModel)]="imgTwoUrl" (change)="handleSecondImg($event)" id="imgTwo"/>
+          </div>
         </div>
         
         

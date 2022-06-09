@@ -1,0 +1,27 @@
+<div class="table-responsive-md">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th >Nombre</th>
+          <th>Apellido</th>
+          <th>Edad</th>
+          <th>D.N.I.</th>
+          <th>Email</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.fistName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.dni}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+

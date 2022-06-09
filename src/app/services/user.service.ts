@@ -44,7 +44,7 @@ export class UserService {
   }*/
 
   createElement(user: User, profileImgOne:any, profileImgTwo:any){
-    /*if (profileImgOne) {
+    if (profileImgOne) {
       let file = profileImgOne;
       let randomId = Math.random().toString(36).substring(2);
       user.profileImgOne = randomId;
@@ -57,7 +57,7 @@ export class UserService {
       user.profileImgTwo = randomId;
       let fileRef = this.fireStorage.storage.ref(`profileImg/${randomId}.jpg`);
       fileRef.put(file);
-    }*/
+    }
     if (user.profile == "Paciente") {
       user.isActive = true;
     }else{

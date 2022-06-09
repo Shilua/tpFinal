@@ -11,12 +11,20 @@ import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PanelComponent } from './components/panel/panel.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { UsersComponent } from './components/users/users.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PanelComponent,
+    AdminComponent,
+    UsersComponent,
+    UserTableComponent
   ],
   imports: [
     BrowserModule,

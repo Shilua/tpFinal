@@ -17,11 +17,12 @@ export class RegisterComponent implements OnInit {
   imgOneUrl:string='';
   imgTwoUrl:string='';
   especiality:string='';
+  imageOne:any;
+  imageTwo:any;
 
 
   constructor(
-    private authSvc:AuthService,
-    private fireAuth:AngularFireAuth, 
+    private authSvc:AuthService, 
     private userSvc:UserService,
     private router: Router
     ) {
@@ -37,13 +38,11 @@ export class RegisterComponent implements OnInit {
       this.authSvc.getCurrentUser().then((response: any) => {
       this.user.id = response.uid;
       this.userSvc.createElement(
-        this.user,null, null
+        this.user,this.imageOne, this.imageTwo
       );
-      this.fireAuth.currentUser.then((user) =>{
-        if (user) {
-          user.sendEmailVerification();
-        }
-          
+      this.authSvc.getCurrentUser().then((u:any) => u.sendEmailVerification()).then(
+        () => {
+          console.log('send correo');
         }
       );
       //this.router.navigate(['/principal']);
@@ -51,25 +50,32 @@ export class RegisterComponent implements OnInit {
 
   }).catch(error => this.mensaje = error);
   }
- /* handleFirstImg(files: FileList) {
-    this.imgOne = files.item(0);
+ handleFirstImg(files: any) {
+    this.imageOne = files.target.files[0];
   }
-  handleSecondImg(files: FileList) {
-    this.imgTwo = files.item(0);
+  handleSecondImg(files: any) {
+    this.imageTwo = files.target.files[0];
   }
 
-  handleProfile(profile:any){
+  /*handleProfile(profile:any){
     this.user.profile = profile;
     console.log(this.user.profile);
   }*/
 
-  saveEspeciality(){
+  saveEspeciality(){                           
     this.user.speciality.push(this.especiality);
     //console.log(this.user.especiality);
   }
 
   login(){
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
+  }
+
+  especialista(){
+    this.user.profile = 'Especialista'
+  }
+  paciente(){
+    this.user.profile = 'Paciente'
   }
 
 }
