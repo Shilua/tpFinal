@@ -15,6 +15,7 @@ import { PanelComponent } from './components/panel/panel.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserTableComponent } from './components/user-table/user-table.component
     PanelComponent,
     AdminComponent,
     UsersComponent,
-    UserTableComponent
+    UserTableComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

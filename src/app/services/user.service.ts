@@ -43,6 +43,10 @@ export class UserService {
     });
   }*/
 
+  async getProfilePhoto(id: string) {
+    return this.fireStorage.storage.ref(`profileImg/${id}.jpg`).getDownloadURL();
+  }
+
   createElement(user: User, profileImgOne:any, profileImgTwo:any){
     if (profileImgOne) {
       let file = profileImgOne;

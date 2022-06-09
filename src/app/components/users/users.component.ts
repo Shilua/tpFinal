@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { WSAEUSERS } from 'constants';
 import { User } from 'src/app/classes/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -30,14 +31,26 @@ export class UsersComponent implements OnInit {
           user.email = data.email;
           user.password = data.password
           user.profile = data.profile;
+          user.profileImgOne = data.profileImgOne;
+          this.userServ.getProfilePhoto(user.profileImgOne).then(
+            response=>{
+              user.imageOne = response;
+            }
+          )
           if (user.profile == 'Paciente') {
             user.obraSocial = data.obraSocial;
-            user.profileImgOne = user.profileImgOne;
-            user.profileImgTwo = user.profileImgTwo;
+            
+            user.profileImgTwo = data.profileImgTwo;
+            this.userServ.getProfilePhoto(user.profileImgTwo).then(
+              response=>{
+                user.imageTwo = response;
+              }
+            );
           }else {
             user.speciality = user.speciality;
-            user.profileImgOne = user.profileImgOne;
           }
+
+          ;
 
           this.users.push(user);
         })

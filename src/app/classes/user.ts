@@ -12,6 +12,8 @@ export class User {
     public isActive:boolean = false;
     public profileImgOne:any;
     public profileImgTwo:any;
+    public imageOne:string = ''
+    public imageTwo:string = ''
     constructor(){
 
     }

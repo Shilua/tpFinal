@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
     this.authServ.onLogin(this.user).then(
       response => {
         if (response?.user?.emailVerified) {
-          this.router.navigate(['/panel']);
+          this.router.navigate(['/users']);
+        }else{
+          alert('falta verificar')
         }
       }
     )
