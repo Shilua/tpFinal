@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { json } from 'express';
 import { User } from '../classes/user';
 import { AuthService } from './auth.service';
 @Injectable({
@@ -42,6 +43,12 @@ export class UserService {
         });
     });
   }*/
+
+  updateElement(anUser:User){
+    this.firestore.collection('users').doc(anUser.id).update(
+      JSON.parse(JSON.stringify(anUser))
+    );
+  }
 
   async getProfilePhoto(id: string) {
     return this.fireStorage.storage.ref(`profileImg/${id}.jpg`).getDownloadURL();

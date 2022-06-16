@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CaptchaComponent } from './components/captcha/captcha.component';
 import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings } from 'ng-recaptcha';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { RECAPTCHA_SETTINGS, RecaptchaFormsModule, RecaptchaModule, RecaptchaSet
     UserTableComponent,
     NavbarComponent,
     InicioComponent,
-    CaptchaComponent
+    CaptchaComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

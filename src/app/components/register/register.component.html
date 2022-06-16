@@ -1,94 +1,91 @@
 <div class="row justify-content-center" style="padding-top: 150px;">
-  <div class="col-4">
-    <img class="mb-4 rounded-circle" src="../../../assets/fever-g399928f28_640.png" alt="" width="250" height="250" (click)="paciente()">
-  </div>
-  <div class="col-4"><img class="mb-4 rounded-circle" src="../../../assets/doctor-ge7cc28a68_640.png" alt="" width="250" height="250" (click)="especialista()"></div>
-</div>
-<div class="row justify-content-center" style="padding-top: 150px;">
-    <div class="col-8 align-self-center">
-      <div>
-        <div class="form-group">
-            <label for="firstName">Nombre</label>
-            <input [(ngModel)]="user.fistName" placeholder="ingrese nombre" type="Text" class="form-control" id="firstName"/>
-        </div>
-        <div class="form-group">
-            <label for="lastName">Apellido</label>
-            <input [(ngModel)]="user.lastName" placeholder="ingrese apelldo" type="Text" class="form-control" id="lastName"/>
-        </div>
-        <div class="form-group">
-            <label for="DNI">DNI</label>
-            <input [(ngModel)]="user.dni"  type="Number" class="form-control" id="DNI"/>
-        </div>
-        <div class="form-group">
-          <label for="Edad">Edad</label>
-          <input [(ngModel)]="user.age"  type="Number" class="form-control" id="Edad"/>
-      </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control" id="email"/>
-        </div>
-        <div class="form-group">
-          <label for="pass">Password</label>
-          <input [(ngModel)]="user.password" placeholder="ingrese clave" type="password" class="form-control" id="pass"/>
-        </div>
-        <!--div class="form-group">
-          <label for="Perfil">Perfil</label>
-          <select class="form-control" [(ngModel)]="this.user.profile" id="perfil" >
-            <option>Paciente</option>
-            <option>Especialista</option>
-          </select>
-        </div-->
-        
-        <div *ngIf="this.user.profile == 'Especialista'">
-          <div class="form-group">
-            <label for="Especialidad">Especialidad</label>
-            <input type="text" class="form-control" id="Especialidad" [(ngModel)]="this.especiality"/>
-            <p>{{this.user.speciality}}</p>
-            <button class="btn btn-block btn-outline-primary" (click)="saveEspeciality()">cargar</button>
-          </div>
-          <div class="form-group" >
-            <label for="imgOne">Foto de perfil</label>
-            <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
-          </div>
-        </div>
-        <div *ngIf="this.user.profile == 'Paciente'">
-        <div class="form-group">
-            <label for="obraSocial">Obra Social</label>
-            <input [(ngModel)]="user.obraSocial" placeholder="ingrese Obra Social" type="Text" class="form-control" id="obraSocial"/>
-        </div>
-          <div class="form-group" >
-            <label for="imgOne">Foto de perfil</label>
-            <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
-          </div>
-          <div class="form-group">
-            <label for="imgTwo">Foto de perfil dos</label>
-          <input type="file" class="form-control" [(ngModel)]="imgTwoUrl" (change)="handleSecondImg($event)" id="imgTwo"/>
-          </div>
-        </div>
-
-        <div class="container-fluid py-3">
-          <h1>Angular reCAPTCHA v2</h1>
-        
-          <form #form="ngForm">
-            <div class="row mt-3">
-              <div class="col-sm-12 mb-2">
-                <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
-                <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
-                  <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12 mb-2">
-                <button type="button" class="btn btn-sm btn-primary" (click)="send(form)">Send</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        
-        
-        <button class="btn btn-block btn-primary" (click)="onRegister()">Registrarse</button>
-        <button class="btn btn-block btn-outline-primary" (click)="login()">Conectarse</button>
-      </div>
+  <div class="col-md-3 offset-md-2" >
+    <div class="col-4">
+      <img class="mb-4 rounded-circle" src="../../../assets/fever-g399928f28_640.png" alt="" width="250" height="250" (click)="paciente()">
+      <h3>Paciente</h3>
     </div>
+    <div class="col-4">
+      <img class="mb-4 rounded-circle" src="../../../assets/doctor-ge7cc28a68_640.png" alt="" width="250" height="250" (click)="especialista()">
+      <h3>Especialista</h3>
+    </div>
+  </div>
+  <div class="col-md-4 " >
+    <div>
+      <div class="form-group">
+          <label for="firstName">Nombre</label>
+          <input [(ngModel)]="user.fistName" placeholder="ingrese nombre" type="Text" class="form-control" id="firstName"/>
+      </div>
+      <div class="form-group">
+          <label for="lastName">Apellido</label>
+          <input [(ngModel)]="user.lastName" placeholder="ingrese apelldo" type="Text" class="form-control" id="lastName"/>
+      </div>
+      <div class="form-group">
+          <label for="DNI">DNI</label>
+          <input [(ngModel)]="user.dni"  type="Number" class="form-control" id="DNI"/>
+      </div>
+      <div class="form-group">
+        <label for="Edad">Edad</label>
+        <input [(ngModel)]="user.age"  type="Number" class="form-control" id="Edad"/>
+    </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input [(ngModel)]="user.email" placeholder="ingrese Email" type="email" class="form-control" id="email"/>
+      </div>
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <input [(ngModel)]="user.password" placeholder="ingrese clave" type="password" class="form-control" id="pass"/>
+      </div>
+      
+      <div *ngIf="this.user.profile == 'Especialista'">
+        <div class="form-group">
+          <label for="Especialidad">Especialidad</label>
+          <input type="text" class="form-control" id="Especialidad" [(ngModel)]="this.especiality"/>
+          <p>{{this.user.speciality}}</p>
+          <button class="btn btn-block btn-outline-primary" (click)="saveEspeciality()">cargar</button>
+        </div>
+        <div class="form-group" >
+          <label for="imgOne">Foto de perfil</label>
+          <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
+        </div>
+      </div>
+      <div *ngIf="this.user.profile == 'Paciente'">
+      <div class="form-group">
+          <label for="obraSocial">Obra Social</label>
+          <input [(ngModel)]="user.obraSocial" placeholder="ingrese Obra Social" type="Text" class="form-control" id="obraSocial"/>
+      </div>
+        <div class="form-group" >
+          <label for="imgOne">Foto de perfil</label>
+          <input type="file" class="form-control" [(ngModel)]="imgOneUrl" (change)="handleFirstImg($event)" id="imgOne"/>
+        </div>
+        <div class="form-group">
+          <label for="imgTwo">Foto de perfil dos</label>
+        <input type="file" class="form-control" [(ngModel)]="imgTwoUrl" (change)="handleSecondImg($event)" id="imgTwo"/>
+        </div>
+      </div>
+
+      <div class="container-fluid py-3">
+        <h1>Angular reCAPTCHA v2</h1>
+      
+        <form #form="ngForm">
+          <div class="row mt-3">
+            <div class="col-sm-12 mb-2">
+              <re-captcha id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+              <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+                <div *ngIf="recaptcha.errors?.['required']">This field is required.</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 mb-2">
+              <button type="button" class="btn btn-sm btn-primary" (click)="send(form)">Send</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      
+      <button class="btn btn-block btn-primary" (click)="onRegister()">Registrarse</button>
+      <button class="btn btn-block btn-outline-primary" (click)="login()">Conectarse</button>
+    </div>
+  </div>
   </div>

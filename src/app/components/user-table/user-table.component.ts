@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 import { User } from 'src/app/classes/user';
 
 @Component({
@@ -8,9 +8,15 @@ import { User } from 'src/app/classes/user';
 })
 export class UserTableComponent implements OnInit {
   @Input() users:Array<User> = []
+  @Output() sendUser:EventEmitter<User> = new EventEmitter<User>();
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  activeUser(user:User){
+    this.sendUser.emit(user);
+  }
+
 
 }

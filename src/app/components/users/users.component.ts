@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WSAEUSERS } from 'constants';
 import { User } from 'src/app/classes/user';
 import { UserService } from 'src/app/services/user.service';
 
@@ -56,6 +55,11 @@ export class UsersComponent implements OnInit {
         })
       }
     )
+  }
+
+  handleUser(anUser:User){
+    anUser.isActive = true;
+    this.userServ.updateElement(anUser);
   }
 
 }

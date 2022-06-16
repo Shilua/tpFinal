@@ -1,36 +1,40 @@
 <!--app-toasts aria-live="polite" aria-atomic="true"></app-toasts-->
-<div class="col-md-4 offset-md-4 text-center form-signin"  style="padding-top: 150px;">
-    <form>
-        <h1 class="h3 mb-3 fw-normal">Por favor conectese</h1>
-    
-        <div class="form-floating">
-          <input [(ngModel)]="user.email" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com"  >
-          <label for="floatingInput">Correo electronico</label>
-        </div>
-        <div class="form-floating">
-          <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" >
-          <label for="floatingPassword">Contraseña</label>
-        </div>
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" disabled> Recuerdame
-          </label>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">Conectarse</button>    
-            </div>
-            <div class="col-md-6">
-                <button class="w-100 btn btn-lg btn-outline-primary" type="submit" (click)="register()">Registrarse</button>    
-            </div>
-        </div>
-        <div class="row d-grid gap-2 col-6 mx-auto"  style="padding-top: 50px;">
-          <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('sjkatvslesilkvcymr@kvhrs.com','administrador01')">Administrador</button>
-          <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('fjcdrwflepeoxjikzw@kvhrr.com','paciente01')">Paciente01</button>
-          <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('eunutfxnamyyllzmsu@nthrw.com','especialista01')">especialista01</button>
-
-
-        </div>
-      </form>
+<div class="row" style="padding-top: 150px;">
+  <div class="col-md-4 offset-md-2"  >
+    <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('sjkatvslesilkvcymr@kvhrs.com','administrador01')">Administrador</button>
+    <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('fjcdrwflepeoxjikzw@kvhrr.com','paciente01')">Paciente01</button>
+    <button class="w-100 btn btn-lg btn-primary roundedButton" type="button" (click)="loginWithUser('eunutfxnamyyllzmsu@nthrw.com','especialista01')">especialista01</button>
+  
+  
+  </div>
+  <div class="col-md-4 text-center form-signin"  >
+      <form>
+          <h1 class="h3 mb-3 fw-normal">Por favor conectese</h1>
+      
+          <div class="form-floating">
+            <input [(ngModel)]="user.email" name="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com"  >
+            <label for="floatingInput">Correo electronico</label>
+          </div>
+          <div class="form-floating">
+            <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password" >
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <div class="checkbox mb-3">
+            <label>
+              <input type="checkbox" value="remember-me" disabled> Recuerdame
+            </label>
+          </div>
+          <div class="row">
+              <div class="col-md-6">
+                  <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">Conectarse</button>    
+              </div>
+              <div class="col-md-6">
+                  <button class="w-100 btn btn-lg btn-outline-primary" type="submit" (click)="register()">Registrarse</button>    
+              </div>
+          </div>
+          
+        </form>
+  </div>
 </div>
+
 
