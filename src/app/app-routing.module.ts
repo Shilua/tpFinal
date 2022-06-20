@@ -5,14 +5,14 @@ import { LoginComponent } from './components/login/login.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  
   { path: 'panel', component: PanelComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: UsersComponent }
+  { path: 'users', component: UsersComponent , canActivate:[AuthGuard]}
 
 ];
 

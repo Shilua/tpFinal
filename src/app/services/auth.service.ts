@@ -8,6 +8,8 @@ import { User } from '../classes/user';
 export class AuthService {
 
   public isLogged: any = false;
+  public profile:string = '';
+  public anUser:User = new User();
   constructor(
     public afAuth: AngularFireAuth,
     //private router: Router
@@ -39,6 +41,13 @@ export class AuthService {
   }
 
   logout() {
+    this.profile = '';
+    this.isLogged = false;
     this.afAuth.signOut();
+  }
+
+  saveUser(anUser:User){
+    this.anUser = anUser;
+    console.log(this.anUser)
   }
 }
